@@ -85,7 +85,7 @@ export const FilesAndTablesView: React.FC<FilesAndTablesViewProps> = ({
     fileName: 'Code.gs' | 'Index.html' | 'appsscript.json'
   ) => {
     try {
-      const res = await fetch(`/apps-script/${fileName}`);
+      const res = await fetch(`./apps-script/${fileName}`);
       if (!res.ok) {
         throw new Error(`HTTP ${res.status}`);
       }
@@ -115,7 +115,7 @@ export const FilesAndTablesView: React.FC<FilesAndTablesViewProps> = ({
 
   const handleCopyCodeGs = async () => {
     try {
-      const res = await fetch('/apps-script/Code.gs');
+      const res = await fetch('./apps-script/Code.gs');
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const text = await res.text();
       await navigator.clipboard.writeText(text);
