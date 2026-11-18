@@ -1,0 +1,201 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: "Plus Jakarta Sans", "Noto Sans Lao", -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Dark Mode Theme Surfaces & Contrast Rules */
+@media not print {
+  html.dark {
+    color-scheme: dark;
+  }
+
+  html.dark body {
+    background-color: #090d16;
+    color: #e2e8f0;
+  }
+
+  html.dark :where(.bg-white):not(.map-blueprint-canvas):not(.map-blueprint-canvas *):not(.print-paper):not(.print-paper *) {
+    background-color: #111827;
+  }
+
+  html.dark :where(.bg-slate-50, .bg-slate-50\/70, .bg-slate-50\/80, .bg-slate-50\/60, .bg-slate-50\/50):not(.map-blueprint-canvas):not(.map-blueprint-canvas *):not(.print-paper):not(.print-paper *) {
+    background-color: #0f172a;
+  }
+
+  html.dark :where(.bg-slate-100, .bg-slate-100\/70, .bg-slate-100\/80, .bg-slate-200\/70):not(.map-blueprint-canvas):not(.map-blueprint-canvas *):not(.print-paper):not(.print-paper *) {
+    background-color: #1e293b;
+  }
+
+  html.dark :where(.bg-slate-900):not(.map-blueprint-canvas):not(.map-blueprint-canvas *):not(.print-paper):not(.print-paper *) {
+    background-color: #0284c7;
+  }
+
+  html.dark :where(.hover\:bg-slate-800:hover):not(.map-blueprint-canvas):not(.map-blueprint-canvas *):not(.print-paper):not(.print-paper *) {
+    background-color: #0369a1;
+  }
+
+  html.dark :where(.hover\:bg-slate-50:hover, .hover\:bg-slate-50\/80:hover, .hover\:bg-slate-50\/50:hover, .hover\:bg-slate-100:hover, .hover\:bg-slate-100\/70:hover, .hover\:bg-slate-200:hover, .hover\:bg-slate-200\/70:hover):not(.map-blueprint-canvas):not(.map-blueprint-canvas *):not(.print-paper):not(.print-paper *) {
+    background-color: #1e293b;
+  }
+
+  html.dark :where(.bg-sky-50, .bg-sky-50\/70, .bg-sky-50\/80, .bg-sky-50\/90, .bg-sky-50\/60, .bg-sky-100):not(.map-blueprint-canvas):not(.map-blueprint-canvas *):not(.print-paper):not(.print-paper *) {
+    background-color: rgba(14, 165, 233, 0.16);
+  }
+
+  html.dark :where(.hover\:bg-sky-100:hover, .hover\:bg-sky-50:hover, .hover\:bg-sky-50\/60:hover):not(.map-blueprint-canvas):not(.map-blueprint-canvas *):not(.print-paper):not(.print-paper *) {
+    background-color: rgba(14, 165, 233, 0.24);
+  }
+
+  html.dark :where(.bg-amber-50, .bg-amber-100):not(.map-blueprint-canvas):not(.map-blueprint-canvas *):not(.print-paper):not(.print-paper *) {
+    background-color: rgba(245, 158, 11, 0.14);
+  }
+
+  html.dark :where(.hover\:bg-amber-100:hover):not(.map-blueprint-canvas):not(.map-blueprint-canvas *):not(.print-paper):not(.print-paper *) {
+    background-color: rgba(245, 158, 11, 0.24);
+  }
+
+  html.dark :where(.bg-rose-50, .bg-rose-50\/60, .bg-rose-50\/70, .bg-rose-100):not(.map-blueprint-canvas):not(.map-blueprint-canvas *):not(.print-paper):not(.print-paper *) {
+    background-color: rgba(244, 63, 94, 0.15);
+  }
+
+  html.dark :where(.hover\:bg-rose-50:hover, .hover\:bg-rose-100:hover):not(.map-blueprint-canvas):not(.map-blueprint-canvas *):not(.print-paper):not(.print-paper *) {
+    background-color: rgba(244, 63, 94, 0.24);
+  }
+
+  html.dark :where(.bg-emerald-50, .bg-emerald-50\/40):not(.map-blueprint-canvas):not(.map-blueprint-canvas *):not(.print-paper):not(.print-paper *) {
+    background-color: rgba(16, 185, 129, 0.14);
+  }
+
+  html.dark :where(.border-slate-200, .border-slate-100, .border-slate-300):not(.map-blueprint-canvas):not(.map-blueprint-canvas *):not(.print-paper):not(.print-paper *) {
+    border-color: #1f2937;
+  }
+
+  html.dark :where(.divide-slate-200, .divide-slate-100):not(.map-blueprint-canvas):not(.map-blueprint-canvas *):not(.print-paper):not(.print-paper *) > :not(:last-child) {
+    border-color: #1f2937;
+  }
+
+  html.dark :where(.border-sky-200, .border-sky-300):not(.map-blueprint-canvas):not(.map-blueprint-canvas *):not(.print-paper):not(.print-paper *) {
+    border-color: rgba(56, 189, 248, 0.35);
+  }
+
+  html.dark :where(.border-amber-200, .border-amber-300):not(.map-blueprint-canvas):not(.map-blueprint-canvas *):not(.print-paper):not(.print-paper *) {
+    border-color: rgba(251, 191, 36, 0.35);
+  }
+
+  html.dark :where(.border-rose-200, .border-rose-400):not(.map-blueprint-canvas):not(.map-blueprint-canvas *):not(.print-paper):not(.print-paper *) {
+    border-color: rgba(251, 113, 133, 0.4);
+  }
+
+  html.dark :where(.border-emerald-200, .border-emerald-300, .border-emerald-400):not(.map-blueprint-canvas):not(.map-blueprint-canvas *):not(.print-paper):not(.print-paper *) {
+    border-color: rgba(52, 211, 153, 0.38);
+  }
+
+  html.dark :where(.text-slate-900, .text-slate-800):not(.map-blueprint-canvas):not(.map-blueprint-canvas *):not(.print-paper):not(.print-paper *) {
+    color: #f1f5f9;
+  }
+
+  html.dark :where(.text-slate-700):not(.map-blueprint-canvas):not(.map-blueprint-canvas *):not(.print-paper):not(.print-paper *) {
+    color: #cbd5e1;
+  }
+
+  html.dark :where(.text-slate-600, .text-slate-500):not(.map-blueprint-canvas):not(.map-blueprint-canvas *):not(.print-paper):not(.print-paper *) {
+    color: #94a3b8;
+  }
+
+  html.dark :where(.hover\:text-slate-900:hover, .hover\:text-slate-800:hover):not(.map-blueprint-canvas):not(.map-blueprint-canvas *):not(.print-paper):not(.print-paper *) {
+    color: #ffffff;
+  }
+
+  html.dark :where(.text-sky-700, .text-sky-800, .text-sky-900):not(.map-blueprint-canvas):not(.map-blueprint-canvas *):not(.print-paper):not(.print-paper *) {
+    color: #7dd3fc;
+  }
+
+  html.dark :where(.text-amber-700, .text-amber-800, .text-amber-900, .text-amber-950):not(.map-blueprint-canvas):not(.map-blueprint-canvas *):not(.print-paper):not(.print-paper *) {
+    color: #fcd34d;
+  }
+
+  html.dark :where(.text-rose-700, .text-rose-800):not(.map-blueprint-canvas):not(.map-blueprint-canvas *):not(.print-paper):not(.print-paper *) {
+    color: #fda4af;
+  }
+
+  html.dark :where(.text-emerald-700, .text-emerald-800):not(.map-blueprint-canvas):not(.map-blueprint-canvas *):not(.print-paper):not(.print-paper *) {
+    color: #6ee7b7;
+  }
+
+  html.dark :where(.text-teal-700):not(.map-blueprint-canvas):not(.map-blueprint-canvas *):not(.print-paper):not(.print-paper *) {
+    color: #5eead4;
+  }
+
+  html.dark :where(input, select, textarea):not(.map-blueprint-canvas *):not(.print-paper *) {
+    background-color: #0f172a;
+    color: #f1f5f9;
+    border-color: #334155;
+  }
+
+  html.dark :where(input::placeholder, textarea::placeholder) {
+    color: #64748b;
+  }
+
+  html.dark .recharts-cartesian-grid line {
+    stroke: #1f2937;
+  }
+
+  html.dark .recharts-line-curve[stroke="#0f172a"] {
+    stroke: #38bdf8;
+  }
+
+  html.dark .recharts-dot[fill="#0f172a"] {
+    fill: #38bdf8;
+  }
+
+  html.dark .map-blueprint-canvas {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+  }
+
+  html.dark .print-paper {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+  }
+}
+
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only-container {
+    position: static !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    overflow: visible !important;
+  }
+}
